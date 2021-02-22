@@ -135,8 +135,10 @@ const DOM = {
 // Foramatação da Moeda
 const Utils = {
     formatAmount(value) {
-        value = Number(value) * 100
+        value = Math.round(Number(value) * 100)
         return value
+
+        // Usaremos o método Math.round() que arredonda o número que foi passado como argumento,pois alguns números (como o 0.56) fica um resultado bizarro de 56.000.000, essa solução épara eitar qualquer tipo de bug futuro. 
     },
 
     formatDate(date) {
